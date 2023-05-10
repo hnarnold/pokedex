@@ -6,7 +6,7 @@ import { BrowserRouter as Router,
 
 import Header from "./sharedpieces/header";
 import Home from "./home/home";
-import Pokemon from "./sharedpieces/pokemons";
+import PokemonList from "./sharedpieces/pokemonList";
 
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
       </Routes>
 
       <Routes>
-      <Route path="/pokedex" element={<Pokemon />} />
+      <Route path="/pokedex" element={<PokemonList />} />
       </Routes>
 
 
