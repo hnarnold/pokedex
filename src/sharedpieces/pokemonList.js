@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import './headers.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
+import createCard from "./createCard";
+import Card from '../sharedpieces/pokecard';
+import '../sharedpieces/card.css'
+
 
 
 // this file component that fetches data from the PokeAPI 
@@ -12,9 +16,13 @@ const PokemonList = () => {
   const [pokemon, setPokemon] = useState([]);
   const [generation, setGeneration] = useState(1);
 
+  const [cardprops, setcardprops] = useState({});
+  const [loaded, setloaded] = useState(false);
+
+
 
   const fetchPokemon = async () => {
-// setting limits for each generation
+    // setting limits for each generation
     let limit, offset;
     switch (generation) {
       case 1:
@@ -71,41 +79,63 @@ const PokemonList = () => {
       (poke) =>
         poke.id > offset && poke.id <= offset + limit
     );
-  // function called with filteredPokemon
-  // update the state of the pokemon variable w/ filter
+    // function called with filteredPokemon
+    // update the state of the pokemon variable w/ filter
     setPokemon(filteredPokemon);
   };
 
-  
+
   useEffect(() => {
     fetchPokemon();
   }, [generation]);
 
-/*
-  const reloadPokemon = () => {
-    setPokemon([]);
-    fetchPokemon();
-  };
-*/
-  //render pokemon
+  // 
+
+
 
   const renderPokemon = () => {
+
+    function showCard(pokeId) {
+        createCard(pokeId).then((result) => {
+        setcardprops(result);
+        setloaded(true);
+      })
+    }
+
     return (
       <div className="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
+
+
+
+
+
+        {loaded &&
+        <div >
+              <Card {...cardprops}>
+              </Card>
+              </div>}
+
+
+
+
+
+
+              
         {pokemon.map((poke) => (
-          <div key={poke.id} className="col-mb-4">
+          <div onClick={() => showCard(poke.id)} key={poke.id} className="col-mb-4">
+
             <div className="card h-100 max-w-300">
-              <img 
-              src={poke.sprites.front_default} 
-              className="card-img-top" 
-              alt={poke.name} 
+              <img
+                src={poke.sprites.front_default}
+                className="card-img-top"
+                alt={poke.name}
               />
               <div className="card-body">
                 <h5 className="card-title card-title text-center text-truncate text-break">
                   {poke.name}
-                  </h5>
+                </h5>
                 <p className="card-text card-title text-center text-truncate text-break">
-                  Type: 
+                  Type:
                   {poke.types.map(type => type.type.name).join(', ')}</p>
               </div>
             </div>
@@ -178,10 +208,10 @@ const PokemonList = () => {
         </div>
       </div>
       {renderPokemon()}
-  
+
     </div>
   );
- 
+
 
 };
 

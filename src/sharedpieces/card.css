@@ -1,0 +1,126 @@
+.pleasecenter {
+	display: flex;
+	justify-content: center;
+	
+
+ }
+.pokecard {
+	 border: 10px solid #f1dd21;
+	 border-radius: 15px;
+	 height: 470px;
+	 width: 340px;
+	 color: black;
+	 text-align: left;
+}
+ .pokecard .innerCard {
+	 padding: 0 15px;
+	 border-radius: 5px;
+	 height: 100%;
+}
+ .pokecard .innerCard .type-icon {
+	 height: 20px;
+	 width: 20px;
+	 padding: 0;
+	 margin: 0;
+	 display: flex;
+}
+ .pokecard .innerCard .type-icon .type-icon-image {
+	 height: 100%;
+}
+ .pokecard .innerCard .header {
+	 display: flex;
+	 justify-content: space-between;
+	 padding: 0;
+	 margin: 0;
+}
+ .pokecard .innerCard .header .pokemon-name {
+	 font-size: 21px;
+	 font-weight: 700;
+	 margin: 0;
+	 font-style: italic;
+}
+ .pokecard .innerCard .header .health-container {
+	 display: flex;
+	 align-items: center;
+	 margin: 0;
+}
+ .pokecard .innerCard .header .health-container .type-icon {
+	 margin-left: 5px;
+}
+ .pokecard .innerCard .header .health-container .health-points {
+	 margin: 0;
+	 font-size: 21px;
+	 font-weight: 700;
+}
+ .pokecard .innerCard .header .health-container .health-points .hp {
+	 font-size: 12px;
+}
+ .pokecard .innerCard .portrait {
+	 border: 3px solid #ececec;
+	 height: 150px;
+	 margin: 0;
+	 background-image: url("../images/background.jpg");
+	 background-size: 100%;
+	 text-align: center;
+}
+ .pokecard .innerCard .portrait .portrait-picture {
+	 height: 100%;
+}
+ .pokecard .innerCard .moves-list {
+	 margin-top: 20px;
+}
+ .pokecard .innerCard .moves-list p {
+	 margin: 0;
+}
+ .pokecard .innerCard .moves-list .move {
+	 margin-bottom: 10px;
+}
+ .pokecard .innerCard .moves-list .move .move-header-container {
+	 display: flex;
+	 justify-content: space-between;
+	 margin-bottom: 4px;
+	 padding: 0;
+}
+ .pokecard .innerCard .moves-list .move .move-header-container .move-name {
+	 font-weight: 600;
+	 font-style: italic;
+	 font-size: 16px;
+}
+ .pokecard .innerCard .moves-list .move .move-header-container .move-power {
+	 font-weight: 600;
+}
+ .pokecard .innerCard .moves-list .move .move-description {
+
+	 font-size: 12px;
+}
+ .pokecard .innerCard .flavortext-container {
+	 display: flex;
+	 justify-content: space-evenly;
+	 font-size: 8px;
+	 font-weight: bold;
+}
+ .pokecard .innerCard .flavortext-container .strength, .pokecard .innerCard .flavortext-container .weakness {
+	 width: 27%;
+	 height: max-content;
+	 margin-right: 5px;
+	 border-top: 3px solid #ececec;
+	 border-bottom: 3px solid #ececec;
+	 padding: 4px 0px;
+}
+ .pokecard .innerCard .flavortext-container .strength p, .pokecard .innerCard .flavortext-container .weakness p {
+	 margin: 0;
+}
+ .pokecard .innerCard .flavortext-container .strength img, .pokecard .innerCard .flavortext-container .weakness img {
+	 display: inline-block;
+}
+ .pokecard .innerCard .flavortext-container .flavortext {
+	 padding-left: 5%;
+	 width: 50%;
+	 font-size: 8px;
+}
+ .pokecard .innerCard .flavortext-container .flavortext p {
+	 border-top: 3px solid #ececec;
+	 border-bottom: 3px solid #ececec;
+	 margin: 0;
+}
+ 
