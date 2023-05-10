@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from "react-router-dom";
 import './headers.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { House, Heart, Grid, PatchQuestion } from 'react-bootstrap-icons'; // import the icons
+import { House, Heart, Grid, PatchQuestion, Person } from 'react-bootstrap-icons'; // import the icons
 import pokedexIcon from '../images/Pokedex.png';
 
 
@@ -55,6 +55,15 @@ const Header = () => {
                 Who's That Pokemon
                
               </NavLink>
+            </li>
+            <NavLink to="/signin" className="nav-link text-white">
+              <Person className="bi d-block mx-auto mb-1" size={20} />
+                Sign In
+               
+              </NavLink>
+
+            <li>
+              
             </li>
           </ul>
         </div>

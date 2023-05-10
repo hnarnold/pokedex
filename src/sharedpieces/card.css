@@ -123,4 +123,44 @@
 	 border-bottom: 3px solid #ececec;
 	 margin: 0;
 }
- 
+
+
+.card-pop-up {
+	position: fixed;
+	z-index: 1;
+	left: 37%;
+	top: 15%;
+	width: max-content;
+	/* background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+.close-button-cont {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+	.card-pop-up {
+	  left: 10%;
+	  top: 20%;
+	  width: 80%;
+	}
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+	.card-pop-up {
+	  left: 20%;
+	  top: 15%;
+	  width: 60%;
+	}
+  }
+  
+  @media (min-width: 1025px) {
+	.card-pop-up {
+	  left: 37%;
+	  top: 15%;
+	  width: max-content;
+	}
+  }

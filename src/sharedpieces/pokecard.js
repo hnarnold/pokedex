@@ -21,11 +21,29 @@ import darkIcon from '../images/dark-icon.png';
 import steelIcon from '../images/steel-icon.png';
 import fairyIcon from '../images/fairy-icon.png';
 
+import normalBackground from '../images/backgrounds/normalBackground.jpg'
+import bugBackground from '../images/backgrounds/bugBackground.jpg'
+import electricBackground from '../images/backgrounds/electricBackground.jpg'
+import fightingBackground from '../images/backgrounds/fightingBackground.jpg'
+import ghostBackground from '../images/backgrounds/ghostBackground.jpg'
+import psychicBackground from '../images/backgrounds/psychicBackground.jpg'
+import flyingBackground from '../images/backgrounds/flyingBackground.jpg'
+import steelBackground from '../images/backgrounds/steelBackground.png'
+import iceBackground from '../images/backgrounds/iceBackground.jpg'
+import poisonBackground from '../images/backgrounds/poisonBackground.jpg'
+import fireBackground from '../images/backgrounds/fireBackground.jpg'
+import dragonBackground from '../images/backgrounds/dragonBackground.jpg'
+import groundBackground from '../images/backgrounds/groundBackground.jpg'
+import waterBackground from '../images/backgrounds/waterBackground.jpg'
+import darkBackground from '../images/backgrounds/darkBackground.jpg'
+import rockBackground from '../images/backgrounds/rockBackground.png'
+import grassBackground from '../images/backgrounds/grassBackground.jpg'
+import fairyBackground from '../images/backgrounds/fairyBackground.jpg'
+
 
 
 export default function Card(props) {
   
-
   let typeMapping = {
     normal: {
       name: 'normal',
@@ -33,7 +51,8 @@ export default function Card(props) {
       weakness: [ 'rock', 'steel' ],
       strengths: [],
       color: '#474747',
-      icon: normalIcon
+      icon: normalIcon,
+      background:normalBackground
     },
     bug: {
       name: 'bug',
@@ -46,7 +65,8 @@ export default function Card(props) {
       ],
       strengths: [ 'grass', 'psychic', 'dark' ],
       color: '#64e474',
-      icon: bugIcon
+      icon: bugIcon,
+      background:bugBackground
     },
     electric: {
       name: 'electric',
@@ -54,7 +74,8 @@ export default function Card(props) {
       weakness: [ 'electric', 'grass', 'dragon' ],
       strengths: [ 'water', 'flying' ],
       color: '#ebe727',
-      icon: electricIcon
+      icon: electricIcon,
+      background:electricBackground
     },
     fighting: {
       name: 'fighting',
@@ -62,7 +83,8 @@ export default function Card(props) {
       weakness: [ 'poison', 'flying', 'psychic', 'bug', 'fairy' ],
       strengths: [ 'normal', 'ice', 'rock', 'dark', 'steel' ],
       color: '#eb2727',
-      icon: fightingIcon
+      icon: fightingIcon,
+      background:fightingBackground
     },
     ghost: {
       name: 'ghost',
@@ -70,7 +92,8 @@ export default function Card(props) {
       weakness: [ 'dark' ],
       strengths: [ 'psychic', 'ghost' ],
       color: '#da45fc',
-      icon: ghostIcon
+      icon: ghostIcon,
+      background:ghostBackground
     },
     psychic: {
       name: 'psychic',
@@ -78,7 +101,8 @@ export default function Card(props) {
       weakness: [ 'psychic', 'steel' ],
       strengths: [ 'fighting', 'poison' ],
       color: '#833ab4',
-      icon: psychicIcon
+      icon: psychicIcon,
+      background:psychicBackground
     },
     flying: {
       name: 'flying',
@@ -86,7 +110,8 @@ export default function Card(props) {
       weakness: [ 'electric', 'rock', 'steel' ],
       strengths: [ 'grass', 'fighting', 'bug' ],
       color: '#589ad5',
-      icon: flyingIcon
+      icon: flyingIcon,
+      background:flyingBackground
     },
     steel: {
       name: 'steel',
@@ -94,7 +119,8 @@ export default function Card(props) {
       weakness: [ 'fire', 'water', 'electric', 'steel' ],
       strengths: [ 'ice', 'rock', 'fairy' ],
       color: '#a6afb6',
-      icon: steelIcon
+      icon: steelIcon,
+      background:steelBackground
     },
     ice: {
       name: 'ice',
@@ -102,7 +128,8 @@ export default function Card(props) {
       weakness: [ 'fire', 'water', 'ice', 'steel' ],
       strengths: [ 'grass', 'ground', 'flying', 'dragon' ],
       color: '#b0dcff',
-      icon: iceIcon
+      icon: iceIcon,
+      background:iceBackground
     },
     poison: {
       name: 'poison',
@@ -110,7 +137,8 @@ export default function Card(props) {
       weakness: [ 'poison', 'ground', 'rock', 'ghost' ],
       strengths: [ 'grass', 'fairy' ],
       color: '#c693c8',
-      icon: poisonIcon
+      icon: poisonIcon,
+      background:poisonBackground
     },
     fire: {
       name: 'fire',
@@ -118,7 +146,8 @@ export default function Card(props) {
       weakness: [ 'fire', 'water', 'rock', 'dragon' ],
       strengths: [ 'grass', 'ice', 'bug', 'steel' ],
       color: '#e76736',
-      icon: fireIcon
+      icon: fireIcon,
+      background:fireBackground
     },
     dragon: {
       name: 'dragon',
@@ -126,7 +155,8 @@ export default function Card(props) {
       weakness: [ 'steel' ],
       strengths: [ 'dragon' ],
       color: '#420386',
-      icon: dragonIcon
+      icon: dragonIcon,
+      background:dragonBackground
     },
     ground: {
       name: 'ground',
@@ -134,7 +164,8 @@ export default function Card(props) {
       weakness: [ 'grass', 'bug' ],
       strengths: [ 'fire', 'electric', 'poison', 'rock', 'steel' ],
       color: '#b88d0e',
-      icon: groundIcon
+      icon: groundIcon,
+      background:groundBackground
     },
     water: {
       name: 'water',
@@ -142,7 +173,8 @@ export default function Card(props) {
       weakness: [ 'water', 'grass', 'dragon' ],
       strengths: [ 'fire', 'ground', 'rock' ],
       color: '#004eed',
-      icon: waterIcon
+      icon: waterIcon,
+      background:waterBackground
     },
     dark: {
       name: 'dark',
@@ -150,7 +182,8 @@ export default function Card(props) {
       weakness: [ 'fighting', 'dark', 'fairy' ],
       strengths: [ 'psychic', 'ghost' ],
       color: '#b4915a',
-      icon: darkIcon
+      icon: darkIcon,
+      background:darkBackground
     },
     rock: {
       name: 'rock',
@@ -158,7 +191,8 @@ export default function Card(props) {
       weakness: [ 'fighting', 'ground', 'steel' ],
       strengths: [ 'fire', 'ice', 'flying', 'bug' ],
       color: '#ba7200',
-      icon: rockIcon
+      icon: rockIcon,
+      background:rockBackground
     },
     grass: {
       name: 'grass',
@@ -171,7 +205,8 @@ export default function Card(props) {
       ],
       strengths: [ 'water', 'ground', 'rock' ],
       color: '#089e09',
-      icon: grassIcon
+      icon: grassIcon,
+      background:grassBackground
     },
     fairy: {
       name: 'fairy',
@@ -179,7 +214,8 @@ export default function Card(props) {
       weakness: [ 'fire', 'poison', 'steel' ],
       strengths: [ 'fighting', 'dragon', 'dark' ],
       color: '#f797f9',
-      icon: fairyIcon
+      icon: fairyIcon,
+      background:fairyBackground
     }
   }
   var backColor1, backColor2;
@@ -214,7 +250,8 @@ export default function Card(props) {
               
           </div>
         </div>
-        <div className='portrait'>
+        <div className='portrait' 
+        style={{backgroundImage: "url(" + typeMapping[props.type[0]].background + ")", backgroundSize:"100%", backgroundRepeat:"no-repeat"}}>
           <img className='portrait-picture' src={props.image}/>
         </div>
         <div className='moves-list'>

@@ -5,6 +5,7 @@ import axios from "axios";
 import createCard from "./createCard";
 import Card from '../sharedpieces/pokecard';
 import '../sharedpieces/card.css'
+//import CardGrid from "./cardModal";
 
 
 
@@ -15,7 +16,7 @@ const PokemonList = () => {
   // create my array
   const [pokemon, setPokemon] = useState([]);
   const [generation, setGeneration] = useState(1);
-
+  //card state variable
   const [cardprops, setcardprops] = useState({});
   const [loaded, setloaded] = useState(false);
 
@@ -89,9 +90,7 @@ const PokemonList = () => {
     fetchPokemon();
   }, [generation]);
 
-  // 
-
-
+  // render pokemon
 
   const renderPokemon = () => {
 
@@ -102,27 +101,37 @@ const PokemonList = () => {
       })
     }
 
+    function closeCard(){
+      setloaded(false);
+    }
+
+    // modal 
+    //const handleShowModal = (poke) => {
+    //  setSelectedPokemon(poke);
+    //};
+    //const handleCloseModal = () => {
+    //  setSelectedPokemon(null);
+    //};
+
     return (
+
       <div className="row row-cols-2 row-cols-md-4 row-cols-lg-6 g-4">
 
-
-
-
-
         {loaded &&
-        <div >
+        <div class="card-pop-up justify-content-center">
               <Card {...cardprops}>
-              </Card>
+              </Card> 
+                <div class="close-button-cont">
+                <button onClick = {closeCard} type="button" 
+                class="btn btn-danger justify-content-center" 
+                >
+                  Close Card
+                </button>
+                </div>
               </div>}
 
-
-
-
-
-
-              
         {pokemon.map((poke) => (
-          <div onClick={() => showCard(poke.id)} key={poke.id} className="col-mb-4">
+          <div onClick={() => showCard(poke.id)} key={poke.id} className="col-mb-4" data-toggle="modal" data-target="#exampleModal">
 
             <div className="card h-100 max-w-300">
               <img
@@ -137,6 +146,7 @@ const PokemonList = () => {
                 <p className="card-text card-title text-center text-truncate text-break">
                   Type:
                   {poke.types.map(type => type.type.name).join(', ')}</p>
+
               </div>
             </div>
           </div>
@@ -151,56 +161,56 @@ const PokemonList = () => {
         <div className="btn-group" role="group" aria-label="Generations">
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 1 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 1 ? "active" : ""}`}
             onClick={() => setGeneration(1)}
           >
             Gen 1
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 2 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 2 ? "active" : ""}`}
             onClick={() => setGeneration(2)}
           >
             Gen 2
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 3 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 3 ? "active" : ""}`}
             onClick={() => setGeneration(3)}
           >
             Gen 3
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 4 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 4 ? "active" : ""}`}
             onClick={() => setGeneration(4)}
           >
             Gen 4
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 5 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 5 ? "active" : ""}`}
             onClick={() => setGeneration(5)}
           >
             Gen 5
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 6 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 6 ? "active" : ""}`}
             onClick={() => setGeneration(6)}
           >
             Gen 6
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 7 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 7 ? "active" : ""}`}
             onClick={() => setGeneration(7)}
           >
             Gen 7
           </button>
           <button
             type="button"
-            className={`btn btn-secondary ${generation === 8 ? "active" : ""}`}
+            className={`btn btn-outline-danger ${generation === 8 ? "active" : ""}`}
             onClick={() => setGeneration(8)}
           >
             Gen 8
